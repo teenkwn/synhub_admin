@@ -1,0 +1,48 @@
+.Sidebar-root {
+    background-color: #7D7D7D;
+    padding: 40px;
+    width: 20%;
+    height: 100vh;
+}
+
+.Sidebar-root-realtime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Sidebar-root-userinfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.Sidebar-root-userinfo-pic {
+    width: 100%;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+}
+.Sidebar-root-userinfo-name {
+    margin-top: 20px;
+}
+.Sidebar-root-userinfo-name-sub {
+    font-size: .5em;
+}
+.Sidebar-root-all {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.Sidebar-root-all > * {
+    margin-top: 20px;
+    align-items: flex-start;
+    text-align: start;
+}
+.logout {
+    margin-top: 80px;
+}
+.Sidebar-root-all-timeattendace {
+    color: #212529;
+}
+.Sidebar-root-all-dashboard {
+    color: #212529;
+}
