@@ -18,13 +18,12 @@ function Sidebar() {
            </div>
        </div>
        <div className="Sidebar-root-all">
-            <Link to="/dashboard">
+            <Link to="/">
               <div className="Sidebar-root-all-dashboard">Dashboard</div>
             </Link>
             <Link to="/userlist">
               <div className="Sidebar-root-all-timeattendace">User List</div>
             </Link>
-            <div className="Sidebar-root-all-setting">Setting</div>
        </div>
         <div className="logout" onClick={() => app.auth().signOut()}>Log Out</div>
     </div>

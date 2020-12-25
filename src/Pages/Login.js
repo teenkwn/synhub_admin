@@ -29,10 +29,10 @@ function Login({history}) {
   return (
     <div className="login-root">
         <img src={SHLogo} alt="logoSH" class="sh-logo"></img>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} className="formSignin">
             <div className="text-input">
                 <input className="text-input-1" name="email" type="text" placeholder="Email"></input>
-                <input className="text-input-2" name="password" type="text" placeholder="Password"></input>
+                <input className="text-input-2" name="password" type="password" placeholder="Password"></input>
             </div>
             <button type="submit" className="login-button">Login</button>
         </form>

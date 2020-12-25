@@ -10,6 +10,10 @@
     margin-top: 100px;
 }
 
+.formSignin {
+    width: 40%;
+}
+
 .text-input {
     display: flex;
     flex-direction: column;
@@ -26,6 +30,7 @@
     height: 40px;
     width: 40%;
     padding: 10px;
+    width: 100%;
 }
 
 .login-button {

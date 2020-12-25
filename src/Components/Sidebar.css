@@ -1,8 +1,8 @@
 .Sidebar-root {
     background-color: #7D7D7D;
     padding: 40px;
-    width: 20%;
-    height: 100vh;
+    width: 25%;
+    /* height: 100vh; */
 }
 
 .Sidebar-root-realtime {

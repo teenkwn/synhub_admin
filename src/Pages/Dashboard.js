@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
 import piechart from "../Assets/piechart.png";
 import app from '../Firebase/config';
+import { PieChart } from 'react-minimal-pie-chart';
 
 function Dashboard() {
     const userRef = app.firestore().collection('users');
@@ -25,133 +26,200 @@ function Dashboard() {
     <div className="dashboard-root">
        <Sidebar/>
        <div className="dashboard-root-right">
-        <div className="dashboard-root-number-overview">
-            <div className="dashboard-root-number-overview-1">
-                <div className="number-big">7</div>
-                <div className="data-moreinfo">
-                    <div className="data-moreinfo-name">Site Location</div>
-                    <div className="data-moreinfo-more">More Info</div>
-                </div>
-            </div>
-            <div className="dashboard-root-number-overview-2">
-                <div className="number-big">200</div>
-                    <div className="data-moreinfo">
-                        <div className="data-moreinfo-name">Payroll Employees</div>
-                        <div className="data-moreinfo-more">More Info</div>
-                    </div>
-            </div>
-            <div className="dashboard-root-number-overview-3">
-                <div className="number-big">40</div>
-                <div className="data-moreinfo">
-                    <div className="data-moreinfo-name">Sub Contractor Employees</div>
-                    <div className="data-moreinfo-more">More Info</div>
-                </div>
-            </div>
-            <div className="dashboard-root-number-overview-4">
-                <div className="number-big">59</div>
-                <div className="data-moreinfo">
-                    <div className="data-moreinfo-name">Monopoly Contractor Employees</div>
-                    <div className="data-moreinfo-more">More Info</div>
-                </div>
-            </div>
-            <div className="dashboard-root-number-overview-5">
-                <div className="number-big">7</div>
-                <div className="data-moreinfo">
-                    <div className="data-moreinfo-name">Site Location</div>
-                    <div className="data-moreinfo-more">More Info</div>
-                </div>
-            </div>
-        </div>
+        <div className="dashboard-topic">Dashboard</div>
         <div className="dashboard-root-info">
             <div className="dashboard-root-info-side">
-                <div>DASHBOARD</div>
                 <div className="dashboard-root-info-side-detail">
-                    <img src={piechart} alt="piechart" className="piechart"></img>
-                    <div className="dashboard-root-info-side-detail-type">
-                        <div>Monopoly Contractor Employee</div>
-                        <div>Sub Contractor Employee</div>
-                        <div>Pay Roll Employee</div>
-                        <div>See More </div>
-                    </div>
+                    <PieChart className="pieClass"
+                        data={[
+                            { title: 'Smart farm/ Agriculture', value: 10, color: '#E38627' },
+                            { title: 'Food and beverage', value: 15, color: '#C13C37' },
+                            { title: 'Consumer product', value: 20, color: '#6A2135' },
+                            { title: 'Financial', value: 10, color: '#000000' },
+                            { title: 'Property and Construction', value: 10, color: '#C9DAF1' },
+                            { title: 'Resource', value: 10, color: '#82BC95' },
+                            { title: 'Communication', value: 10, color: '#DADADA' },
+                            { title: 'System Integrator', value: 10, color: '#485C7A' },
+                            { title: 'Mobility', value: 10, color: '#FFF2C3' },
+                            { title: 'Services', value: 10, color: '#EDC10C' },
+                        ]}
+                    />
                 </div>
-                <div className="dashboard-root-info-side-cost">
-                    <div>WAGE COST IN ROUND</div>
-                    <div className="cost">XX,XXX,XXX Baht</div>
-                    <div>ปรอท</div>
-                    <div>วันที่</div>
+                <div className="dashboard-root-info-side-detail">
+                     <div className="dashboard-root-info-side-detail-type">
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Smart farm/ Agriculture</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Food and beverage</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Consumer product</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Financial</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Property and Construction</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Resource</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Communication</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>System Integrator</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Mobility</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Services</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="dashboard-root-info-employ-daily">
-                <div>
-                    <div>Attend Employees</div>
-                    <div className="dashboard-root-info-employ-daily-number">
-                        <div>
-                            <div>200/200</div>
-                            <div>Pay Roll</div>
-                        </div>
-                        <div>
-                            <div>40/40</div>
-                            <div>Sub Contractor</div>
-                        </div>
-                        <div>
-                            <div>59/59</div>
-                            <div>Monopoly Contractor</div>
-                        </div>
-                    </div>
-                    
+            <div className="dashboard-root-info-side">
+                <div className="dashboard-root-info-side-detail">
+                    <PieChart className="pieClass"
+                        data={[
+                            { title: 'Smart farm/ Agriculture', value: 10, color: '#E38627' },
+                            { title: 'Food and beverage', value: 15, color: '#C13C37' },
+                            { title: 'Consumer product', value: 20, color: '#6A2135' },
+                            { title: 'Financial', value: 10, color: '#000000' },
+                            { title: 'Property and Construction', value: 10, color: '#C9DAF1' },
+                            { title: 'Resource', value: 10, color: '#82BC95' },
+                            { title: 'Communication', value: 10, color: '#DADADA' },
+                            { title: 'System Integrator', value: 10, color: '#485C7A' },
+                            { title: 'Mobility', value: 10, color: '#FFF2C3' },
+                            { title: 'Services', value: 10, color: '#EDC10C' },
+                        ]}
+                    />
                 </div>
-                <div>
-                    <div>Absent Employees</div>
-                    <div className="dashboard-root-info-employ-daily-number">
-                        <div>
-                            <div>200/200</div>
-                            <div>Pay Roll</div>
+                <div className="dashboard-root-info-side-detail">
+                     <div className="dashboard-root-info-side-detail-type">
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Smart farm/ Agriculture</div>
                         </div>
-                        <div>
-                            <div>40/40</div>
-                            <div>Sub Contractor</div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Food and beverage</div>
                         </div>
-                        <div>
-                            <div>59/59</div>
-                            <div>Monopoly Contractor</div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Consumer product</div>
                         </div>
-                    </div>
-                </div>
-                <div className="dashboard-root-info-employ-daily-optional">
-                    <div>
-                        <div className="optional-XX">XX</div>
-                        <div>Optional 1</div>
-                    </div>
-                    <div>
-                        <div className="optional-XX">XX</div>
-                        <div>Optional 2</div>
-                    </div>
-                    <div>
-                        <div className="optional-XX">XX</div>
-                        <div>Optional 3</div>
-                    </div>
-                    <div>
-                        <div className="optional-XX">XX</div>
-                        <div>Optional 4</div>
-                    </div>
-                    <div>
-                        <div className="optional-XX">XX</div>
-                        <div>Optional 5</div>
-                    </div>
-                </div>
-                <div className="time-counting">
-                    <div>
-                        <div>250:00:00</div>
-                        <div>Planned Working Hours</div>
-                    </div>
-                    <div>
-                        <div>120:00:00</div>
-                        <div>Actual Working Hours</div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Financial</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Property and Construction</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Resource</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Communication</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>System Integrator</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Mobility</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Services</div>
+                        </div>
                     </div>
                 </div>
-                
+            </div>
+            <div className="dashboard-root-info-side">
+                <div className="dashboard-root-info-side-detail">
+                    <PieChart className="pieClass"
+                        data={[
+                            { title: 'Smart farm/ Agriculture', value: 10, color: '#E38627' },
+                            { title: 'Food and beverage', value: 15, color: '#C13C37' },
+                            { title: 'Consumer product', value: 20, color: '#6A2135' },
+                            { title: 'Financial', value: 10, color: '#000000' },
+                            { title: 'Property and Construction', value: 10, color: '#C9DAF1' },
+                            { title: 'Resource', value: 10, color: '#82BC95' },
+                            { title: 'Communication', value: 10, color: '#DADADA' },
+                            { title: 'System Integrator', value: 10, color: '#485C7A' },
+                            { title: 'Mobility', value: 10, color: '#FFF2C3' },
+                            { title: 'Services', value: 10, color: '#EDC10C' },
+                        ]}
+                    />
+                </div>
+                <div className="dashboard-root-info-side-detail">
+                     <div className="dashboard-root-info-side-detail-type">
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Creativity</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Leadership Ability</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Design Thinking</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Agile</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Pitching Skill</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Coding</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Data Science</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Digital Marketing</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Marketing Communication</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Branding</div>
+                        </div>
+                        <div className="dashboard-root-info-side-detail-type-sub">
+                            <div className="point"></div>
+                            <div>Business Model</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        
        </div>
     </div>
   );
