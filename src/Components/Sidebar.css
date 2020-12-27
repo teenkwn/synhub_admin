@@ -4,7 +4,9 @@
     width: 25%;
     /* height: 100vh; */
 }
-
+.logo-size {
+    width: 250px;
+}
 .Sidebar-root-realtime {
     display: flex;
     flex-direction: row;
