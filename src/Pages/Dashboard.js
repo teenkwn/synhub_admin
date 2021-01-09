@@ -15,35 +15,57 @@ function Dashboard() {
     const allData = []; 
     const countData =[];
 
-    const getData = () => {
-        userRef.get().then((snapshot) => {
-            snapshot.forEach((doc) => {
+    console.log(data)
+    console.log(count)
+    const getData = async() => {
+        try {
+            const snapshotUser = await userRef.get();
+            snapshotUser.forEach((doc) => {
                 allData.push({id: doc.id, ...doc.data()})
             })
+            console.log(allData)
             setData(allData);
-        }).catch(function(err) {
-            console.log("error getting error",err)
-        })
-        countRef.get().then((snapshot) => {
-            snapshot.forEach((doc) => {
+            const snapshotCount= await countRef.get();
+            snapshotCount.forEach((doc) => {
                 countData.push({id:doc.id, ...doc.data()})
             })
+            console.log(countData)
             setCount(countData);
-        }).catch(function(err) {
-            console.log("error getting error",err)
-        })
-        // console.log(countData)
+            setLoading(true);
+        } catch (err) {
+            console.dir(err)
+        }
+        // userRef.get().then((snapshot) => {
+        //     snapshot.forEach((doc) => {
+        //         allData.push({id: doc.id, ...doc.data()})
+        //     })
+        //     setData(allData);
+        //     setLoading(true)
+        //     console.log(allData)
+        //     console.log(data)
+            
+        // }).catch(function(err) {
+        //     console.log("error getting error",err)
+        // })
+        // countRef.get().then((snapshot) => {
+        //     snapshot.forEach((doc) => {
+        //         countData.push({id:doc.id, ...doc.data()})
+        //     })
+        //     setCount(countData);
+        //     console.log(countData)
+        //     console.log(count)
+        // }).catch(function(err) {
+        //     console.log("error getting error",err)
+        // })
     }
     useEffect(() => {
         getData()
-        setLoading(true)
+        // setLoading(true)
     },[])
+    console.log(allData)
+    console.log(loading)
 
-    console.log(count[1])
-    console.log(loading);
-    // console.log(interest.financial)
-    // count.forEach(el => console.log(el))
-        if(loading) {
+    if(loading) {
         return (
             <div className="dashboard-root">
                <Sidebar/>
